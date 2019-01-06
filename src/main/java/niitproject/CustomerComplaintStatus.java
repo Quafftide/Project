@@ -23,7 +23,7 @@ public class CustomerComplaintStatus extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List <Customer> complaint = new ArrayList <Customer> ();
+		List <String> complaint = new ArrayList <String> ();
 		
 		HttpSession session = request.getSession(false);
 		String email = (String) session.getAttribute("Email");
@@ -32,7 +32,8 @@ public class CustomerComplaintStatus extends HttpServlet {
 		CustomerDAO dao = new CustomerDAO();
 		complaint = dao.checkComplaintStatus(email);
 		
-		
+		for(String s : complaint)	
+			System.out.println(s);
 		request.setAttribute("complaint", complaint);
 		
 		//RequestDispatcher rd = request.getRequestDispatcher("/Status.jsp");

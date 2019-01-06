@@ -36,7 +36,7 @@ public class CustomerDAO {
 		
 		
 	}
-	 List<Customer> checkComplaintStatus(String email )
+	 List<String> checkComplaintStatus(String email )
 	{	
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("PU");
 		EntityManager em = emf.createEntityManager();
@@ -45,9 +45,9 @@ public class CustomerDAO {
 		t.begin();
 		
 		System.out.println(email);
-		Query query = (Query) em.createNativeQuery(" select * from Customer  where cust_email = ?email");
-		query.setParameter("email",email);
-		List<Customer> list = query.getResultList();
+		Query query = (Query) em.createNativeQuery(" select c.cust_complaint from Customer c where c.cust_email = 'joy@gmail.com'");
+		//query.setParameter("email",email);
+		List<String> list = query.getResultList();
 	
 		t.commit();
 		
