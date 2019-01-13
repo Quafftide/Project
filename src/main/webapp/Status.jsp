@@ -221,12 +221,23 @@ div.error {
              
 <!--   --------my adding  for style -->
 
-<c:forEach var="customer" items="${complaint}">
 
-		
+<% ArrayList <String> fruits = new ArrayList<String>();
+	fruits.add("Orange");
+	fruits.add("Apple");	
 	
+	
+%>
 
-              <li><a href="#"></a>
+<p> How are your </p>
+
+<c:forEach items="${fruits}" var="items" >
+
+<p> Hi how are you </p>
+		
+	<c:out value="${items}"></c:out> <br>
+
+              <!--  <li><a href="#"></a>
                <div style="-moz-box-shadow: 1px 1px 3px 2px #79fa38;
                     -webkit-box-shadow: 1px 1px 3px 2px #79fa38;
                       box-shadow:         1px 1px 3px 2px #79fa38;">
@@ -234,11 +245,11 @@ div.error {
                 <div class="row header">
                 <div class="input-field col s12 navbar-collapse" align="center">
                   <h4 style="font-weight: bolder;">Complaint</h4>
-                  <p><center><c:out value="${complaint}"></c:out></center> </p>
+                  <p><center> <c:out value="${fruits}"></c:out>  </center> </p>
                 </div></div>
-              </div></li>
+              </div></li> -->
 
-
+  
 </c:forEach>
 
 
