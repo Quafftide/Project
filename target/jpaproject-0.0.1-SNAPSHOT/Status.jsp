@@ -216,14 +216,9 @@ div.error {
       </div>
     </div>
  
-    <div class="ctrlqFormContentWrapper">
-      <div class="ctrlqHeaderMast"></div>
-      <div class="ctrlqCenteredContent">
-        <div class="ctrlqFormCard">
-          <div class="ctrlqAccent"></div>
-          <div class="ctrlqFormContent">
+  
 
-            <form action="addSubscriber" method="get">  
+             
 <!--   --------my adding  for style -->
 
 <c:forEach var="customer" items="${complaint}">
@@ -238,7 +233,7 @@ div.error {
             
                 <div class="row header">
                 <div class="input-field col s12 navbar-collapse" align="center">
-                  <h4 style="font-weight: bolder;">Phyton</h4>
+                  <h4 style="font-weight: bolder;">Complaint</h4>
                   <p><center><c:out value="${complaint}"></c:out></center> </p>
                 </div></div>
               </div></li>
@@ -246,11 +241,6 @@ div.error {
 
 </c:forEach>
 
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
