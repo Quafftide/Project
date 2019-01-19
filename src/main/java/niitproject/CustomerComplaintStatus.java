@@ -1,6 +1,7 @@
 package niitproject;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,16 @@ public class CustomerComplaintStatus extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head>Registered Data</head>");
+		out.println("<table>");
+		out.println("tr>");
+		out.println("<th>Complaint</th>");
+		out.println("/tr>");
+		
+		
 		List <String> complaint = new ArrayList <String> ();
 		
 		HttpSession session = request.getSession(false);
@@ -32,13 +43,21 @@ public class CustomerComplaintStatus extends HttpServlet {
 		CustomerDAO dao = new CustomerDAO();
 		complaint = dao.checkComplaintStatus(email);
 		
+		
+		
 		for(String s : complaint)	
-			System.out.println(s);
+			{System.out.println(s);
+		out.println("<tr>");
+		out.println(s);
+		out.println("</tr>");
+			}
+		
+		
 		request.setAttribute("complaint", complaint);
 		
 		//RequestDispatcher rd = request.getRequestDispatcher("/Status.jsp");
 		// rd.forward(request, response);
-		response.sendRedirect("/jpaproject/Status.jsp");
+		//response.sendRedirect("/jpaproject/Status.jsp");
 		
 		
 	}

@@ -68,6 +68,7 @@ public class Customer {
 	public void setCust_complaint(String cust_complaint) {
 		this.cust_complaint = cust_complaint;
 	}
+	
 	public String getCust_pwd() {
 		return cust_pwd;
 	}
